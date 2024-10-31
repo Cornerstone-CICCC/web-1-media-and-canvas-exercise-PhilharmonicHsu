@@ -4,20 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
+  <style>
+    body {
+      background-image: url("./assets/images/background.jpg");
+      background-position: bottom center;
+      background-color: green;
+      background-repeat: no-repeat;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
+    <audio src="./assets/audio/piano.wav"
+           controls
+           muted
+           loop
+    ></audio>
 
     <!-- VIDEO HTML GOES HERE -->
-
+    <video src="./assets/video/ocean.mp4"
+           poster="./assets/images/poster.jpg"
+           controls
+           muted
+    ></video>
     <!-- IMAGE MAP HTML GOES HERE-->
+    <img src="./assets/images/fruit_table.jpg" width="600px" usemap="#fruit_table"/>
+    <map name="fruit_table">
+      <area shape="rect" coords="0,0,300,400" href="https://en.wikipedia.org/wiki/Lavandula">
+      <area shape="rect" coords="300,400,600,600" href="https://en.wikipedia.org/wiki/Orange_(fruit)">
+      <area shape="circle" coords="450,200,100" href="https://en.wikipedia.org/wiki/Coffee">
+    </map>
 
     <!-- CANVAS HTML GOES HERE -->
+    <canvas id="canvas_rect" width="500" height="500"></canvas>
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById('canvas_rect');
+    const ctx = canvas.getContext('2d');
+
+    ctx.lineWidth = 5;
+
+    ctx.beginPath();
+    ctx.moveTo(10, 10);
+    ctx.lineTo(150, 10);
+    ctx.strokeStyle = 'blue';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(150, 10);
+    ctx.lineTo(150, 150);
+    ctx.strokeStyle = 'yellow';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(150, 150);
+    ctx.lineTo(10, 150);
+    ctx.strokeStyle = 'red';
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(10, 150);
+    ctx.lineTo(10, 10);
+    ctx.strokeStyle = 'green';
+    ctx.stroke();
   </script>
 </body>
 </html>
